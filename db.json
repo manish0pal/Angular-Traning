@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "manish"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "name": "manish",
+      "mobile": 1234567,
+      "email": "ytci",
+      "password": "2345",
+      "id": 1
+    },
+    {
+      "name": "Manish",
+      "mobile": 1234567890,
+      "email": "manish@gmail.com",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "name": "Manis",
+      "mobile": 5,
+      "email": "",
+      "password": "",
+      "id": 3
+    }
+  ]
+}
