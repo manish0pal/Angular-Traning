@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup ,FormBuilder,Validators, AbstractControl} from '@angular/forms';
 import { Router } from '@angular/router';
+import { CustomValidators } from '../shared/custom.validator';
 
 @Component({
   selector: 'app-signup',
@@ -14,12 +15,19 @@ export class SignupComponent implements OnInit {
   constructor(private formbuilder : FormBuilder, private http : HttpClient,private router:Router) { }
 
   ngOnInit(): void {
+
+
+    // v1 Validation within Component and Html
+
     this.signupForm = this.formbuilder.group({
-      name:['' ,[Validators.required]],
-      mobile:['',[Validators.required,Validators.minLength(10)]],
+      name:['' ,[CustomValidators.nameValid()]],
+      mobile:['',[CustomValidators.mobileValidation()]],
       email:['',[Validators.required,Validators.email]],
       password:['',[Validators.required,Validators.minLength(8)]]
     })
+    // v1 Validation within Component and Html
+
+
   }
   signUp(){
     this.http.post<any>("http://localhost:3000/users",this.signupForm.value)
