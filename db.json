@@ -1,16 +1,25 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "manish"
+      "author": "manish",
+      "post": ""
     }
   ],
   "comments": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "author": "Manish pal",
+      "post": "Jai Shree RAM",
+      "id": 1
+    },
+    {
+      "author": "Manish pal",
+      "post": "Har Har Mahadev",
+      "id": 2
+    },
+    {
+      "author": "ok",
+      "post": "Never Settel",
+      "id": 3
     }
   ],
   "users": [
@@ -34,6 +43,13 @@
       "email": "",
       "password": "",
       "id": 3
+    },
+    {
+      "name": "Manish",
+      "mobile": 1234567892,
+      "email": "manish@gmail.com",
+      "password": "123232242",
+      "id": 4
     }
   ]
 }

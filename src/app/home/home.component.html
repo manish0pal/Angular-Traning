@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 p-4">
+            <form [formGroup]="postForm" (ngSubmit)="insertComment()">
+                <div class="form-group">
+                    <label for="exampleInputAuthor">Name</label>
+                    <input formControlName="author" type="text" class="form-control" id="exampleInputAuthor"
+                        placeholder="Enter author">
+                    <span *ngIf="fp['author'].invalid && fp['author'].touched" class="text-danger">author is required</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPost">Post</label>
+                    <input formControlName="post" type="text" class="form-control" id="exampleInputPost"
+                        placeholder="Enter your post.">
+                    <span *ngIf="fp['post'].invalid && fp['post'].touched" class="text-danger">Post is required</span>
+                </div>
+                <button type="submit" [disabled]="postForm.invalid" class="btn btn-success">Submit</button>
+            </form>
+            <br/>
+            <br/>
+            <table class="table bg-light">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Post</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody >
+                
+                  <tr *ngFor="let comment of comments"> 
+                    <th scope="row">{{comment.id}}</th>
+                    <td>{{comment.author}}</td>
+                    <td>{{comment.post}}</td>
+                    <td><span class="btn btn-danger" (click)="deleteComment(comment.id)">⚔️</span> &nbsp;
+                        <span class="btn btn-primary" (click)="updateComment(comment)">✏️</span>
+                    </td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+
+        </div>
+    </div>
+</div>
