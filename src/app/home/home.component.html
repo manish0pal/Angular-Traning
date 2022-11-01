@@ -10,9 +10,9 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPost">Post</label>
-                    <input formControlName="post" type="text" class="form-control" id="exampleInputPost"
+                    <input formControlName="msg" type="text" class="form-control" id="exampleInputPost"
                         placeholder="Enter your post.">
-                    <span *ngIf="fp['post'].invalid && fp['post'].touched" class="text-danger">Post is required</span>
+                    <span *ngIf="fp['msg'].invalid && fp['msg'].touched" class="text-danger">Post is required</span>
                 </div>
                 <button type="submit" [disabled]="postForm.invalid" class="btn btn-success">Submit</button>
             </form>
@@ -32,7 +32,7 @@
                   <tr *ngFor="let comment of comments"> 
                     <th scope="row">{{comment.id}}</th>
                     <td>{{comment.author}}</td>
-                    <td>{{comment.post}}</td>
+                    <td>{{comment.msg}}</td>
                     <td><span class="btn btn-danger" (click)="deleteComment(comment.id)">⚔️</span> &nbsp;
                         <span class="btn btn-primary" (click)="updateComment(comment)">✏️</span>
                     </td>

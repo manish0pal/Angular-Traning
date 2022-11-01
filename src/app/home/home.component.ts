@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.checkUpdate = false;
     this.postForm = this.formbuilder.group({
       author: ['', [Validators.required]],
-      post: ['', [Validators.required]],
+      msg: ['', [Validators.required]],
       id: ""
     })
     this.getComments()
@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
     this.service.getComments()
       .subscribe(res => {
         //
+        console.log(res);
         this.comments = res;
       })
   }
@@ -71,7 +72,7 @@ export class HomeComponent implements OnInit {
 
   updateComment(_comment: any) {
     this.checkUpdate = true;
-    this.postForm.patchValue({ "author": _comment.author, "post": _comment.post, "id": _comment.id });
+    this.postForm.patchValue({ "author": _comment.author, "msg": _comment.msg, "id": _comment.id });
 
   }
 

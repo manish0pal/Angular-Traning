@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CommentsService {
-  private url = "http://localhost:3000/comments";
+  private url = "http://localhost:5050/api/post/";
 
   constructor(private http: HttpClient) { }
 
@@ -13,7 +13,7 @@ export class CommentsService {
     return this.http.get(this.url);
   }
 
-  insertComment(comment: any) {
+  insertComment(comment: any) { 
     return this.http.post<any>(this.url, comment)
   }
   deleteComment(id: any) {
